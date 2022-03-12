@@ -1,0 +1,62 @@
+setlist = [
+    song1 = {
+        "title" : "Yellow",
+        "released" : 2000,
+        "artist" : "Coldplay",
+        "genres" : ["Alternative/Indie"]
+    },
+    song2 = {
+        "title" : "Somebody",
+        "released" : 2001,
+        "artist" : "The Strokes",
+        "genres" : ["Alternative/Indie"]
+    },
+    song3 = {
+        "title" : "Can't Help Falling in Love",
+        "released" : 1961,
+        "artist" : "Elvis Presley",
+        "genres" : ["Pop", "Folk", "Rock", "Blues"]
+    },
+    song4 = {
+        "title" : "Best Part",
+        "released" : 2017,
+        "artist" : "Daniel Caesar",
+        "genres" : ["Acoustic", "Indie Pop", "R&B"]
+    },
+    song5 = {
+        "title" : "Ma Meilleure Amie",
+        "released" : 2017,
+        "artist" : "Vald",
+        "genres" : ["Hip-Hop", "French Rap"]
+    },
+    song6 = {
+        "title" : "Say You Won't Let Go",
+        "released" : 2016,
+        "artist" : "James Arthur",
+        "genres" : ["Pop", "Folk", "R&B"]
+    },
+    song7 = {
+        "title" : "ILYSB",
+        "released" : 2016,
+        "artist" : "LANY",
+        "genres" : ["Electronic Pop", "Indie Pop"]
+    },
+    song8 = {
+        "title" : "Love on Top",
+        "released" : 2011,
+        "artist" : "Beyonce",
+        "genres" : ["R&B", "Pop"]
+    },
+    song9 = {
+        "title" : "You Were Beautiful",
+        "released" : 2017,
+        "artist" : "Day6",
+        "genres" : ["K-Pop"]
+    },
+    song10 = {
+        "title" : "Home",
+        "released" : 2009,
+        "artist" : "Edward Sharpe & The Magnetic Zeros",
+        "genres" : ["Alternative/Indie", "Folk"]
+    }
+];
