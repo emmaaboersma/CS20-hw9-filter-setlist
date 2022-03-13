@@ -60,11 +60,8 @@
             });
 
             function filter_songs() {
-                // console.log(data);
                 index = document.getElementById("select").selectedIndex;
                 selected_genre = document.getElementById("select").options[index].value;
-
-                console.log(selected_genre);
 
                 filtered = "";
                 for (i = 0; i < 10; i++) {
