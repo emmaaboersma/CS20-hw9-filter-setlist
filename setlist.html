@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Unlucky Day Setlist</title>
+        <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+    </head>
+    <body>
+
+        <!-- raw string data -->
+        <div id="serial">Song1</div>
+        <br />
+        <!-- user-friendly data -->
+        <div id="user-friendly">user</div>
+        <br />
+            
+        <!-- form to filter by genre -->
+        <form>
+            <label for="genre">Filter Songs by Genre</label>
+            <select name="select" id="select">
+                <option value="Alternative/Indie">Alternative/Indie</option>
+                <option value="Pop">Pop</option>
+                <option value="Folk">Folk</option>
+                <option value="Rock">Rock</option>
+                <option value="Blues">Blues</option>
+                <option value="Acoustic">Acoustic</option>
+                <option value="Indie Pop">Indie Pop</option>
+                <option value="R&B">R&B</option>
+                <option value="Hip-Hop">Hip-Hop</option>
+                <option value="French Rap">French Rap</option>
+                <option value="Electronic Pop">Electronic Pop</option>
+                <option value="K-Pop">K-Pop</option>
+            </select>
+            <input type="button" value="Filter" onclick="filter_songs()">
+        </form>
+        <!-- songs filtered by genre -->
+        <div id="genre-songs">Songs</div>
+
+        <script language="javascript">
+            $.get("https://emmaaboersma.github.io/hw9/setlist.json", function( data) {
+                str = JSON.stringify(data);
+                par = JSON.parse(str);
+                
+                // raw string
+                document.getElementById("serial").innerHTML = str;
+
+                // user-friendly
+                strHTML = "<ul>";
+                data.forEach(function(song) {
+                    strHTML += 
+                        song.title + "<br> Artist: " 
+                        + song.artist + "<br> Genre(s): " 
+                        + song.genres + "<br> Released " 
+                        + song.released + "<br><br>";
+                });
+                strHTML += "</ul>";
+                document.getElementById("user-friendly").innerHTML = strHTML;
+
+                
+            });
+
+            function filter_songs() {
+                // console.log(data);
+                index = document.getElementById("select").selectedIndex;
+                selected_genre = document.getElementById("select").options[index].value;
+
+                console.log(selected_genre);
+
+                filtered = "";
+                for (i = 0; i < 10; i++) {
+                    if (par[i].genres.includes(selected_genre)) {
+                        filtered += par[i].title + "<br/>";
+                    }
+                }
+                document.getElementById("genre-songs").innerHTML = filtered;
+            }
+
+            
+            
+        </script>
+
+    </body>
+</html>
